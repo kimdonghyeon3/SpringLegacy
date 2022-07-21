@@ -17,9 +17,12 @@ public class Rq {
         this.response = response;
     }
 
-    public int getIntParam(String str, int i) {
+    public int getIntParam(String str, int defaultValue) {
 
         String param = request.getParameter(str);
+
+        if(param == null)
+            return defaultValue;
 
         return Integer.parseInt(param);
     }
