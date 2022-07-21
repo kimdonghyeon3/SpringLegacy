@@ -15,6 +15,6 @@ public class HelloServlet extends HttpServlet {
 
         response.setContentType("text/html");
         response.setCharacterEncoding("utf-8");
-        response.getWriter().append("안녕하세요");
+        response.getWriter().append("hi");
     }
 }
