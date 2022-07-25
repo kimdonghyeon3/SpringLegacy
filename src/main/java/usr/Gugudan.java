@@ -1,5 +1,6 @@
 package usr;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -19,11 +20,20 @@ public class Gugudan extends HttpServlet {
         int dan = rq.getIntParam("dan", 0);
         int limit = rq.getIntParam("limit", 0);
 
-        rq.appendBody("<h1>%d단</h1>\n".formatted(dan));
+        request.setAttribute("dan",dan);
+        request.setAttribute("limit", limit);
 
-        for (int i = 1; i <= limit; i++) {
-            rq.appendBody("<div>%d * %d = %d</div>\n".formatted(dan, i, dan * i));
-        }
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/gugudan2.jsp");
+        dispatcher.forward(request, response);
+
+        //jsp 방식
+//        rq.appendBody("<h1>%d단</h1>\n".formatted(dan));
+//
+//        for (int i = 1; i <= limit; i++) {
+//            rq.appendBody("<div>%d * %d = %d</div>\n".formatted(dan, i, dan * i));
+//        }
+
+        //기본 servlet 코드
 //        int dan = Integer.parseInt(request.getParameter("dan"));
 //        int limit = Integer.parseInt(request.getParameter("limit"));
 //
