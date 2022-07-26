@@ -13,27 +13,22 @@ import java.io.IOException;
 @WebServlet("/usr/*")
 public class DispatchServlet extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
         Rq rq = new Rq(req, resp);
 
         MemberController memberController = new MemberController();
         ArticleController articleController = new ArticleController();
 
-        // getRequestURI는
-        // http://localhost:8081/usr/article/list/free?page=1 에서
-        // /usr/article/list/free 부분만 가져온다.
-        //String url = req.getRequestURI();
-
         switch (rq.getMethod()) {
             case "GET":
-                switch (rq.getPath()) {
-                    case "/usr/article/list/free":
+                switch (rq.getActionPath()) {
+                    case "/usr/article/detail":
+                        articleController.showDetail(rq);
+                        break;
+                    case "/usr/article/list":
                         articleController.showList(rq);
                         break;
-                    case "usr/article/list/free/*":
-                        articleController.showArticle(rq);
-                        break;
-                    case "/usr/article/write/free":
+                    case "/usr/article/write":
                         articleController.showWrite(rq);
                         break;
                     case "/usr/member/login":
@@ -42,8 +37,8 @@ public class DispatchServlet extends HttpServlet {
                 }
                 break;
             case "POST":
-                switch (rq.getPath()) {
-                    case "/usr/article/write/free":
+                switch (rq.getActionPath()) {
+                    case "/usr/article/write":
                         articleController.doWrite(rq);
                         break;
                 }
