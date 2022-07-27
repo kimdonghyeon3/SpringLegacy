@@ -1,4 +1,7 @@
-<%@ page import="usr.article.dto.ArticleDto" %><%
+<%@ page import="usr.article.dto.ArticleDto" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<%
     ArticleDto article = (ArticleDto)request.getAttribute("article");
 %>
 
@@ -17,3 +20,10 @@
     </div>
     <% } %>
 </div>
+
+<form method="GET" action="/usr/article/delete/free/<%=article.getId()%>">
+    <input type="submit" value="삭제"/>
+</form>
+<form method="GET" action="/usr/article/modify/free/<%=article.getId()%>">
+    <input type="submit" value="수정"/>
+</form>
