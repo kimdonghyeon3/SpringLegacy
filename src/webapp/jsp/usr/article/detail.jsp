@@ -5,25 +5,26 @@
     ArticleDto article = (ArticleDto)request.getAttribute("article");
 %>
 
-<h1>게시물 상세페이지</h1>
+<%@ include file="../common/head.jspf"%>
 
-<div>
-    <% if ( article != null ) { %>
-    <div>
-        ID : <%=article.getId()%>
-    </div>
-    <div>
-        TITLE : <%=article.getTitle()%>
-    </div>
-    <div>
-        BODY : <%=article.getBody()%>
-    </div>
-    <% } %>
-</div>
+<section>
+    <div class="container px-3 mx-auto">
+        <h1 class="font-bold text-lg">게시물 상세페이지</h1>
 
-<form method="GET" action="/usr/article/delete/free/<%=article.getId()%>">
-    <input type="submit" value="삭제"/>
-</form>
-<form method="GET" action="/usr/article/modify/free/<%=article.getId()%>">
-    <input type="submit" value="수정"/>
-</form>
+        <div>
+            <% if ( article != null ) { %>
+            <div>
+                ID : <%=article.getId()%>
+            </div>
+            <div>
+                TITLE : <%=article.getTitle()%>
+            </div>
+            <div>
+                BODY : <%=article.getBody()%>
+            </div>
+            <% } %>
+        </div>
+    </div>
+</section>
+
+<%@ include file="../common/foot.jspf"%>
