@@ -3,10 +3,6 @@
 <%@ page import="usr.article.dto.ArticleDto" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<%
-    List<ArticleDto> articles = (List<ArticleDto>)request.getAttribute("articles");
-%>
-
 <%@ include file="../common/head.jspf"%>
 
 <!-- 보통 구획은 섹션으로 나눈다. -->
