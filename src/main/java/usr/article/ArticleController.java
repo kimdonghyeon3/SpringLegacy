@@ -91,8 +91,7 @@ public class ArticleController {
 
         articleService.modify(id, title, body);
 
-        rq.appendBody("<div>id : %d</div>".formatted(id));
-        rq.appendBody("<div>title : %s</div>".formatted(title));
-        rq.appendBody("<div>body : %s</div>".formatted(body));
+        rq.appendBody("<div>%d번 게시물이 수정되었습니다.</div>".formatted(id));
+        rq.appendBody("<div><a href=\"/usr/article/detail/free/%d\">수정된 글로 이동</a></div>".formatted(id));
     }
 }
