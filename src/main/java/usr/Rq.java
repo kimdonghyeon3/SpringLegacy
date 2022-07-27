@@ -109,4 +109,47 @@ public class Rq {
             return defaultValue;
         }
     }
+
+    public void println(String msg){
+        print(msg + "\n");
+    }
+    public void print(String msg){
+        try {
+            resp.getWriter().append(msg);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void histBack(String msg) {
+        if (msg != null && msg.trim().length() > 0) {
+            println("""
+                    <script>
+                    alert("%s");
+                    </script>
+                    """.formatted(msg));
+        }
+
+        println("""
+                <script>
+                history.back();
+                </script>
+                """);
+    }
+
+    public void replace(String uri, String msg) {
+        if (msg != null && msg.trim().length() > 0) {
+            println("""
+                    <script>
+                    alert("%s");
+                    </script>
+                    """.formatted(msg));
+        }
+
+        println("""
+                <script>
+                location.replace("%s");
+                </script>
+                """.formatted(uri));
+    }
 }
