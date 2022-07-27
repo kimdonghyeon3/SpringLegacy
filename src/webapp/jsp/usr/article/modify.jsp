@@ -26,9 +26,9 @@
 
 <section>
     <div class="container px-3 mx-auto">
-        <h1 class="font-bold text-lg">게시물 수정</h1>
+        <h1 class="font-bold text-lg mb-[20px]">게시물 수정</h1>
         <form method="POST" onsubmit="ArticleSave__submitForm(this); return false;">
-            <div class="flex gap-3">
+            <div class="flex gap-3 mb-[15px]">
                 <span>번호</span>
                 <div>
                     <%=article.getId()%>
@@ -38,24 +38,25 @@
             <div class="flex gap-3">
                 <span>제목</span>
                 <div>
-                    <input name="title" type="text" maxlength="50" placeholder="제목을 입력해주세요." value="<%=article.getTitle()%>" />
+                    <input class="mb-[15px]" name="title" type="text" maxlength="50" placeholder="제목을 입력해주세요." value="<%=article.getTitle()%>" />
                 </div>
             </div>
 
             <div class="flex gap-3">
                 <span>내용</span>
                 <div>
-                    <input name="body" type="text" maxlength="300" placeholder="내용을 입력해주세요." value="<%=article.getBody()%>" />
+                    <input class="mb-[15px]" name="body" type="text" maxlength="300" placeholder="내용을 입력해주세요." value="<%=article.getBody()%>" />
                 </div>
             </div>
 
             <div>
                 <div>
-                    <input class="hover:underline hover:text-[red] cursor-pointer" type="submit" value="수정" />
+                    <input class="hover:underline hover:text-[red] cursor-pointer px-[15px] border border-red-900 rounded-[8px]"
+                           type="submit" value="수정" />
                 </div>
             </div>
         </form>
     </div>
-    </div>
+    </section>
 
 <%@ include file="../common/foot.jspf"%>

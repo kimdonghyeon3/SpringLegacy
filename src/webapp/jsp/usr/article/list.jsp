@@ -17,12 +17,12 @@
 
         <ul class="mt-5">
             <% for ( ArticleDto article : articles ) { %>
-            <li class="flex">
+            <li class="flex border-b border-slate-300 mb-[5px]">
                 <a class="w-[40px] hover:underline hover:text-[red]" href="/usr/article/detail/free/<%=article.getId()%>"><%=article.getId()%></a>
                 <!-- flex-grow : 성장성 1 -->
                 <a class="flex-grow hover:underline hover:text-[red]" href="/usr/article/detail/free/<%=article.getId()%>"><%=article.getTitle()%></a>
-                <a onclick="if ( !confirm('정말로 삭제하시겠습니까?') ) return false;" class="hover:underline hover:text-[red] mr-2" href="/usr/article/delete/free/<%=article.getId()%>">삭제</a>
-                <a class="hover:underline hover:text-[red]" href="/usr/article/modify/free/<%=article.getId()%>">수정</a>
+                <a onclick="if ( !confirm('정말로 삭제하시겠습니까?') ) return false;" class="hover:underline hover:text-[red] mr-2  px-[5px] border-x border-slate-300" href="/usr/article/delete/free/<%=article.getId()%>">삭제</a>
+                <a class="hover:underline hover:text-[red] px-[5px] border-x border-slate-300" href="/usr/article/modify/free/<%=article.getId()%>">수정</a>
             </li>
             <% } %>
         </ul>

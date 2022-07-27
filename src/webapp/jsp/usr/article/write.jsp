@@ -24,25 +24,26 @@
     <!-- container(max-width) : 너비가 너무 넓게 퍼지는 것을 막는다 + 반응형은 잃지 않는다. -->
     <!-- mx-auto : margin-left:auto; margin-right:auto; -->
     <div class="container px-3 mx-auto">
-        <h1 class="font-bold text-lg">게시물 작성</h1>
+        <h1 class="font-bold text-lg mb-[20px]">게시물 작성</h1>
         <form method="POST" onsubmit="ArticleSave__submitForm(this); return false;">
             <div>
                 <span>제목</span>
                 <div>
-                    <input name="title" type="text" maxlength="50" placeholder="제목을 입력해주세요." />
+                    <input class="mb-[15px]" name="title" type="text" maxlength="50" placeholder="제목을 입력해주세요." />
                 </div>
             </div>
 
             <div>
                 <span>내용</span>
                 <div>
-                    <input name="body" type="text" maxlength="300" placeholder="내용을 입력해주세요." />
+                    <input class="mb-[15px]" name="body" type="text" maxlength="300" placeholder="내용을 입력해주세요." />
                 </div>
             </div>
 
             <div>
                 <div>
-                    <input class="hover:underline hover:text-[red] cursor-pointer" type="submit" value="작성" />
+                    <input class="hover:underline hover:text-[red] cursor-pointer px-[15px] border border-red-900 rounded-[8px]"
+                           type="submit" value="작성" />
                 </div>
             </div>
         </form>
