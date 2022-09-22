@@ -60,7 +60,11 @@ Spring 구조를 Tomcat, Servlet, Java를 통해 유사하게 구성한, 유사 
 3. Edit Configuration -> add new Configuration -> smart tomcat 
 <br/>
 Tomcat Server : 다운받은 톰캣 위치
+<br/>
 Deployment Dir.. : 자신 프로젝트의 src\webapp
+<br/>
+Context Path : /
+<br/>
 4. Run
 
 <p align="right">(<a href="#top">back to top</a>)</p>
